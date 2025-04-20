@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abdullah Alahmadi - Portfolio</title>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Link to Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #10b981;
+        --accent-color: #f97316;
+        --dark-color: #1e293b;
+        --light-color: #f8fafc;
+        --text-color: #334155;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-color);
+        scroll-behavior: smooth;
+      }
+      
+      /* Navbar styling */
+      .navbar {
+        transition: all 0.5s ease;
+        padding: 1rem 2rem;
+      }
+      
+      .navbar.scrolled {
+        background-color: rgba(30, 41, 59, 0.97) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 2rem;
+      }
+      
+      .nav-link {
+        position: relative;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: var(--accent-color);
+        transition: all 0.3s ease;
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+        left: 0;
+      }
+      
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+      
+      .navbar.scrolled .navbar-brand img {
+        height: 50px !important;
+      }
+
+      
+      /* Video background */
+      .main-content {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        background-color: var(--dark-color);
+      }
+      
+ 
+/* Hero background styles */
+.main-content {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+/* Animated gradient background */
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #2563eb, #10b981, #1e293b, #f97316);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particles container */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+      .main-content video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+  
+      .main-content .content-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 1;
+        width: 100%;
+      }
+  
+      .main-content h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #fff, var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 20px rgba(0,0,0,0.5);
+      }
+      
+      .main-content h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+  
+      .main-content p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+      
+      #typed-output {
+        font-weight: 700;
+        color: var(--secondary-color);
+        text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      }
+  
+      .main-content .btn-primary {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        border-radius: 50px;
+        background-color: var(--primary-color);
+        border: none;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
+      .main-content .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--secondary-color);
+        transition: all 0.4s ease;
+        z-index: -1;
+      }
+      
+      .main-content .btn-primary:hover::before {
+        left: 0;
+      }
+  
+      .main-content .btn-primary:hover {
+        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        transform: translateY(-3px);
+      }
+      
+      /* About section */
+      .about-me {
+        background-color: var(--light-color);
+        padding: 100px 0;
+      }
+      
+      .profile-img {
+        border-radius: 12px;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        transition: all 0.5s ease;
+        border: 5px solid white;
+      }
+      
+      .profile-img::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: -20px;
+        bottom: -20px;
+        border: 2px solid var(--primary-color);
+        border-radius: 12px;
+        z-index: -1;
+        transition: all 0.3s ease;
+      }
+      
+      .profile-img:hover {
+        transform: scale(1.03);
+      }
+      
+      .profile-img:hover::before {
+        top: 15px;
+        left: 15px;
+      }
+      
+      /* Skills progress bars */
+      .progress {
+        height: 12px;
+        border-radius: 50px;
+        background-color: #e2e8f0;
+        margin-bottom: 30px;
+        overflow: visible;
+      }
+      
+      .progress-bar {
+        border-radius: 50px;
+        position: relative;
+        overflow: visible;
+        transition: width 1.5s ease;
+      }
+      
+      .progress-bar::after {
+        content: attr(aria-valuenow) '%';
+        position: absolute;
+        right: 0;
+        top: -25px;
+        color: var(--text-color);
+        font-weight: bold;
+      }
+      
+      #htmlProgress {
+        background: linear-gradient(to right, var(--secondary-color), #059669);
+      }
+      
+      #cssProgress {
+        background: linear-gradient(to right, var(--primary-color), #3b82f6);
+      }
+      
+      #jsProgress {
+        background: linear-gradient(to right, var(--accent-color), #ea580c);
+      }
+      
+      /* Download CV button */
+      .btn-success {
+        background-color: var(--secondary-color);
+        border: none;
+        border-radius: 50px;
+        padding: 12px 25px;
+        font-weight: 600;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-success:hover {
+        background-color: #059669;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+      }
+      
+      /* Projects section */
+      .projects {
+        padding: 100px 0;
+        background-color: #f1f5f9;
+      }
+      
+      .projects h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 50px;
+        position: relative;
+      }
+      
+      .projects h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--accent-color);
+      }
+      
+      .projects-filter {
+        margin-bottom: 30px;
+      }
+      
+      .filter-btn {
+        background: none;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        border-radius: 30px;
+        padding: 8px 20px;
+        margin: 0 5px 10px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      .filter-btn.active, .filter-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+      
+      .card {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+      
+      .card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+      
+      .card-img-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+        background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);
+      }
+      
+      .card .card-img-top {
+        transition: all 0.5s ease;
+        margin: 0 auto;
+      }
+      
+      .card:hover .card-img-top {
+        transform: scale(1.1);
+      }
+      
+      .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(37, 99, 235, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      
+      .card:hover .card-overlay {
+        opacity: 1;
+      }
+      
+      .card-body {
+        padding: 25px;
+        text-align: center;
+      }
+      
+      .card-title {
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--dark-color);
+      }
+      
+      .card-text a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      .card-text a:hover {
+        color: var(--secondary-color);
+      }
+      
+      /* Footer */
+      footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 50px 0 30px;
+      }
+      
+      footer a {
+        transition: all 0.3s ease;
+      }
+      
+      footer a:hover {
+        transform: translateY(-5px);
+        color: var(--secondary-color) !important;
+      }
+      
+      .social-links {
+        margin: 20px 0;
+      }
+      
+      .social-links a {
+        margin: 0 15px;
+        font-size: 1.5rem;
+        display: inline-block;
+      }
+      
+      /* Stats counters */
+      .counter-box {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+      
+      .counter-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      .counter-value {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+      
+      .counter-label {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .main-content h1 {
+          font-size: 2.5rem;
+        }
+        .main-content h2 {
+          font-size: 2rem;
+        }
+        .main-content p {
+          font-size: 1.2rem;
+        }
+        .counter-value {
+          font-size: 2rem;
+        }
+        .projects h2 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  
+    <!-- Navbar with Transparent Background that changes on scroll -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./images/logoo.jpg" alt="Logo" style="height: 60px; width: auto; border-radius: 8px;">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+<!-- Main Content Section with Animated Background -->
+<div class="main-content" id="home">
+  <!-- Add particles background -->
+  <div id="particles-js"></div>
+   
+  <div class="content-overlay">
+    <h1 data-aos="fade-down" data-aos-duration="1000">Hello, I'm Abdullah</h1>
+    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      and I'm a 
+      <span id="typed-output"></span>
+    </p>
+    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Welcome to my portfolio</p>
+    <a href="#projects" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">View My Work</a>
+  </div>
+</div>
+
+    <!-- About Me Section with Stats -->
+    <div class="about-me py-5" id="about">
+      <div class="container">
+        <h2 class="text-center display-3 fw-bold mb-5" data-aos="fade-up">About Me</h2> 
+        <div class="row align-items-center">
+          <!-- Left Column: Picture -->
+          <div class="col-lg-4 text-center" data-aos="fade-right" data-aos-duration="1000">
+            <img src="./images/MyPhoto.jpg" alt="Abdullah Alahmadi" class="img-fluid mb-4 profile-img" style="max-width: 80%;">
+            
+            <!-- Stats Counters -->
+            <div class="row mt-5">
+              <div class="col-6">
+                <div class="counter-box">
+                  <div class="counter-value" id="projectsCounter">0</div>
+                  <div class="counter-label">Projects Completed</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="counter-box">
+                  <div class="counter-value" id="experienceCounter">0</div>
+                  <div class="counter-label">Years Experience</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: About Text and Progress Bars -->
+          <div class="col-lg-8" data-aos="fade-left" data-aos-duration="1000">
+            <p class="lead mb-4">
+              Hello! I am Abdullah Alahmadi, a passionate web developer with a strong foundation in programming languages like HTML, CSS, and JavaScript. I love building responsive websites and applications that provide great user experiences. I am constantly learning and improving my skills, and I am excited to apply my knowledge in real-world projects.
+            </p>
+            <h4 class="fw-bold mb-4">My Skills</h4>
+            <!-- Progress Bars for Skills -->
+            <div class="skill-item">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-bold">HTML</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" id="htmlProgress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-bold">CSS</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" id="cssProgress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-bold">JavaScript</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" id="jsProgress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            
+            <!-- Download CV Button -->
+            <div class="mt-5">
+              <a href="./files/Abdullah_CV.pdf" download class="btn btn-success">Download My CV</a>
+              <a href="contact.html" class="btn btn-success">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section with Filtering -->
+    <div class="projects py-5" id="projects">
+      <div class="container text-center">
+        <h2 data-aos="fade-up">My Projects</h2>
+        <p class="mb-5" data-aos="fade-up" data-aos-delay="200">Here are some of the projects I've worked on. Check them out!</p>
+        
+        <!-- Filter Buttons -->
+        <div class="projects-filter" data-aos="fade-up" data-aos-delay="300">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+  
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+             <!-- Project 0 Card -->
+             <div class="col project-item" data-category="web design" data-aos="fade-up" data-aos-delay="500">
+              <div class="card h-100">
+                <div class="card-img-wrapper">
+                  <img src="./images/output-onlinepngtools.png" class="card-img-top" alt="PCALL">
+                  <div class="card-overlay">
+                    <a href="https://www.optsmart.net/" target="_blank" class="btn btn-light">View Project</a>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">OPTIMUM SMART</h5>
+                  <p class="card-text"> OPTIMUM SMART  is a company dedicated to delivering high-quality, integrated services including data digitization, digital marketing, networking and websites, and IT infrastructure — all aimed at helping clients achieve excellence.</p>
+                  <a href="https://www.optsmart.net/" target="_blank" class="project-link">Visit Website <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+          <!-- Project 1 Card -->
+          <div class="col project-item" data-category="web" data-aos="fade-up" data-aos-delay="400">
+            <div class="card h-100">
+              <div class="card-img-wrapper">
+                <img src="./images/coco.jpg" class="card-img-top" alt="CocoBakery">
+                <div class="card-overlay">
+                  <a href="https://cocobakery.sa/" target="_blank" class="btn btn-light">View Project</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">CocoBakery</h5>
+                <p class="card-text">A bakery e-commerce platform where users can place online orders for various bakery items.</p>
+                <a href="https://cocobakery.sa/" target="_blank" class="project-link">Visit Website <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 Card -->
+          <div class="col project-item" data-category="web design" data-aos="fade-up" data-aos-delay="500">
+            <div class="card h-100">
+              <div class="card-img-wrapper">
+                <img src="./images/logo.jpg" class="card-img-top" alt="PCALL">
+                <div class="card-overlay">
+                  <a href="https://iiabdullah.github.io/PCALL/starter-template/index.html#" target="_blank" class="btn btn-light">View Project</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">PCALL</h5>
+                <p class="card-text">An e-commerce platform for selling PCs and accessories, built with HTML, CSS, JavaScript, and Bootstrap.</p>
+                <a href="https://iiabdullah.github.io/PCALL/starter-template/index.html#" target="_blank" class="project-link">Visit Website <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 Card -->
+          <div class="col project-item" data-category="web design" data-aos="fade-up" data-aos-delay="600">
+            <div class="card h-100">
+              <div class="card-img-wrapper">
+                <img src="./images/Raq.png" class="card-img-top" alt="Raq Coffee">
+                <div class="card-overlay">
+                  <a href="https://iiabdullah.github.io/Raq/#home" target="_blank" class="btn btn-light">View Project</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Raq Coffee</h5>
+                <p class="card-text">An online coffee shop that allows customers to easily order their favorite coffee beverages.</p>
+                <a href="https://iiabdullah.github.io/Raq/#home" target="_blank" class="project-link">Visit Website <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section with Enhanced Social Links -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container text-center">
+        <h3 class="mb-4" data-aos="fade-up">Let's Connect</h3>
+        <div class="social-links" data-aos="fade-up" data-aos-delay="200">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/abdullah-alahmadi-bbb249268/" target="_blank" class="text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Visit my LinkedIn profile">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/iiAbdullah" target="_blank" class="text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Check out my GitHub repositories">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+        <p class="mt-4" data-aos="fade-up" data-aos-delay="400">&copy; 2024 Abdullah Alahmadi. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Initialize AOS animations
+      AOS.init({
+        duration: 1000,
+        once: true,
+        mirror: false
+      });
+      
+      // Initialize tooltips
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+      // Handle navbar scroll style change
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Initialize Typed.js
+      var options = {
+        strings: ["Web Developer", "Front End Developer", "UI/UX Designer"],
+        typeSpeed: 80,
+        backSpeed: 50,
+        backDelay: 1500,
+        loop: true
+      };
+      
+      var typed = new Typed("#typed-output", options);
+      
+      // Progress bar animation
+      function animateProgressBar(elementId, targetValue) {
+        let progressBar = document.getElementById(elementId);
+        let currentValue = 0;
+        
+        // Reset the progress bar's content
+        progressBar.style.width = '0%';
+        progressBar.setAttribute('aria-valuenow', '0');
+        
+        // Set up the interval to increment the width
+        let interval = setInterval(function() {
+          if (currentValue < targetValue) {
+            currentValue++;
+            progressBar.style.width = currentValue + '%';
+            progressBar.setAttribute('aria-valuenow', currentValue);
+          } else {
+            clearInterval(interval);
+          }
+        }, 15);
+      }
+      
+      // Stats counter animation
+      function animateCounter(elementId, targetValue) {
+        const options = {
+          startVal: 0,
+          duration: 2.5,
+          useEasing: true,
+          useGrouping: true
+        };
+        
+        const counter = new CountUp(elementId, targetValue, options);
+        if (!counter.error) {
+          counter.start();
+        } else {
+          console.error(counter.error);
+        }
+      }
+      
+      // Trigger animations when elements come into view
+      const progressSection = document.getElementById('about');
+      const progressObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Animate progress bars
+            animateProgressBar('htmlProgress', 99);
+            animateProgressBar('cssProgress', 90);
+            animateProgressBar('jsProgress', 80);
+            
+            // Animate counters
+            animateCounter('projectsCounter', 15);
+            animateCounter('experienceCounter', 3);
+            
+            // Stop observing after animation is triggered
+            progressObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      progressObserver.observe(progressSection);
+      
+      // Project filtering
+      document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          // Get the filter value
+          const filter = button.getAttribute('data-filter');
+          
+          // Filter the projects
+          document.querySelectorAll('.project-item').forEach(item => {
+            const categories = item.getAttribute('data-category').split(' ');
+            
+            if (filter === 'all' || categories.includes(filter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+            // Add animation when showing the item
+            if (filter === 'all' || categories.includes(filter)) {
+              item.style.display = 'block';
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 100);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+      
+      // Add smooth scrolling for all anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            // Get the navbar height to offset the scroll position
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            
+            // Calculate the scroll position
+            const scrollPosition = targetElement.offsetTop - navbarHeight;
+            
+            // Smooth scroll to the target
+            window.scrollTo({
+              top: scrollPosition,
+              behavior: 'smooth'
+            });
+            
+            // Update the URL to match the anchor
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+      
+      // Add active class to navbar items based on scroll position
+      function setActiveNavItem() {
+        const sections = document.querySelectorAll('div[id]');
+        const navItems = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        let currentSection = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
+          
+          if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+        
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          if (item.getAttribute('href') === `#${currentSection}`) {
+            item.classList.add('active');
+          }
+        });
+      }
+      
+      // Call setActiveNavItem on scroll
+      window.addEventListener('scroll', setActiveNavItem);
+      
+      // Add initial styles to project items for animations
+      document.querySelectorAll('.project-item').forEach(item => {
+        item.style.transition = 'all 0.4s ease';
+      });
+      
+      // Add hover effect to project cards
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.querySelector('.card-overlay').style.opacity = '1';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.querySelector('.card-overlay').style.opacity = '0';
+        });
+      });
+    </script>
+    <!-- Add particles.js library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  // Initialize particles.js
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "grab"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "push": {
+          "particles_nb": 4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+  </body>
+</html>
